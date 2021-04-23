@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, StyleSheet, ImageBackground, Image} from 'react-native';
 import Card from './Card';
 import Day from './Day';
 
@@ -8,7 +8,10 @@ const Home = props => {
     <View style={styles.container}>
       <View style={styles.containerone}>
         <View style={styles.boxone}>
-          {/* <Image source={require('../assets/user.png')} /> */}
+          <Image
+            style={styles.userImg}
+            source={require('../assets/user1.png')}
+          />
         </View>
         <View style={styles.boxtwo}>
           <Text style={styles.name}> Hi, Anna </Text>
@@ -70,6 +73,9 @@ const styles = StyleSheet.create({
   },
   boxone: {
     flex: 0.48,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   boxtwo: {
     flex: 0.8,
@@ -94,9 +100,12 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   bgImage: {
-    // borderWidth: 1,
     width: 400,
     height: '100%',
+  },
+  userImg: {
+    marginTop: 50,
+    marginRight: 30,
   },
   line: {
     width: 66,
