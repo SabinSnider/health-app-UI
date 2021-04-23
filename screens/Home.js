@@ -1,12 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet, ImageBackground} from 'react-native';
+import Card from './Card';
 import Day from './Day';
 
 const Home = props => {
   return (
     <View style={styles.container}>
       <View style={styles.containerone}>
-        <View style={styles.boxone}></View>
+        <View style={styles.boxone}>
+          {/* <Image source={require('../assets/user.png')} /> */}
+        </View>
         <View style={styles.boxtwo}>
           <Text style={styles.name}> Hi, Anna </Text>
           <Text style={styles.subtitle}>Here's your health </Text>
@@ -27,7 +30,26 @@ const Home = props => {
         </View>
       </View>
 
-      <View style={styles.containertwo}></View>
+      <View style={styles.containertwo}>
+        <View style={styles.line}></View>
+        <View style={styles.progress}>
+          <Text style={styles.textone}>Your Progress</Text>
+        </View>
+        <View style={styles.cards}>
+          <Card
+            image={require('../assets/checkbox.png')}
+            title="Misson"
+            subtitle="85% Completed"
+            completed="85%"
+          />
+          <Card
+            image={require('../assets/checktodo.png')}
+            title="Completed"
+            subtitle="75% Completed"
+            completed="75%"
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -75,6 +97,28 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     width: 400,
     height: '100%',
+  },
+  line: {
+    width: 66,
+    height: 4,
+    backgroundColor: '#f4f0f0',
+    borderRadius: 2,
+    marginVertical: 22,
+    left: 150,
+  },
+  progress: {
+    left: 50,
+    marginBottom: 2,
+  },
+  textone: {
+    fontSize: 20,
+    color: '#2D2D2D',
+    letterSpacing: -0.5,
+  },
+  cards: {
+    flex: 1,
+    marginTop: 10,
+    marginHorizontal: 30,
   },
 });
 
